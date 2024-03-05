@@ -1,0 +1,58 @@
+/* 
+    MADE BY MONNAPSE 
+*/
+
+
+
+/* CONTAINER */
+.main-container {
+    width: 30vw;
+}
+
+
+
+/* LOGO */
+.logo {
+    color: var(--gold);
+    width: 200px;
+    height: auto;
+
+    font-size: 25px;
+    font-weight: 900;
+}
+.logo img {
+    width: 180px;
+    height: auto;
+}
+
+
+
+/* PROMPT */
+.prompt-container {
+    color: var(--light-smoke);
+    width: 450px;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+
+
+/* RESPONSE */
+.response {
+    margin-top: 15px;
+}
+
+
+
+/* SIZING */
+@media (max-width: 1100px) {
+    .main-container {
+        width: 70vw;
+    }
+}
+@media (max-width: 470px) {
+    .main-container {
+        width: 90vw;
+    }
+}

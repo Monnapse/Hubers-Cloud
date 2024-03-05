@@ -1,0 +1,501 @@
+/* SIDE NAVIGATION BAR */
+.side-nav {
+    position: fixed;
+    background-color: var(--charcoal);
+
+    left: 0;
+    height: 100%;
+    width: 350px;
+    z-index: 10;
+}
+.side-nav-top{
+    position: relative;
+    width: 100%;
+    height: 90px;
+}
+.side-nav-main-buttons {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+/* SIDE NAVIGATION BAR TOP ELEMENTS */
+.logo {
+    width: 100px;
+    height: auto;
+    margin-left: 30px;
+}
+
+/* SIDE NAVIGATION BAR BUTTON ELEMENTS */
+.nav-button {
+    position: relative;
+    width: 80%;
+    height: 50px;
+
+    margin-bottom: 15px;
+
+    outline: none;
+    stroke: none;
+
+    border-radius: 100px;
+    border-width: 0px;
+
+    background-color: transparent;
+}
+.nav-button-text {
+    left: 80px;
+    filter: brightness(50%);
+}
+.nav-button-img {
+    width: 30px;
+    height: auto;
+    left: 32px;
+    filter: brightness(50%);
+}
+.side-nav-button {
+    position: fixed;
+    border-radius: 9px;
+    background-color: var(--light-charcoal-2);
+    width: 90px;
+    height: 50px;
+    border-width: 1px;
+    border-color: var(--dark-smoke);
+    margin-top: 7px;
+    margin-left: 7px;
+    transition: 0.3s linear;
+    display: none;
+}
+.side-nav-button-inside {
+    margin-right: 30px;
+    position: relative;
+    float: right;
+    width: 50;
+    height: 30px;
+}
+.side-nav-button-img {
+    width: 30px;
+    height: 30px;
+}
+.side-nav-button-img-inside {
+    width: 15px;
+    height: 15px;
+}
+
+/* COLORS */
+.cloud-info-color-Videos {background-color: var(--purple);}
+.cloud-info-color-Images {background-color: var(--green);}
+.cloud-info-color-Documents {background-color: var(--red2);}
+.cloud-info-color-Unkown {background-color: var(--default-smoke);}
+.cloud-info-color-Others {background: repeating-linear-gradient( -45deg, var(--gold), var(--gold) 10px, var(--navy-blue) 10px, var(--navy-blue) 20px);}
+
+/* */
+.selected {
+    background-color: var(--light-charcaol);
+}
+.selected img, .selected span {
+    filter: brightness(100%);
+}
+
+/* FILE UPLOADING PROGRESS CONTAINER */
+.toggle-upload-container{
+    transition: all 1s;
+    left: calc(-110% + 50px);
+}
+.upload-status-container {
+    position: relative;
+    top: 70px;
+    width: 110%;
+    height: 180px;
+    background-color: var(--light-charcoal-2);
+
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+
+    color: var(--light-smoke);
+    transition: all 1s;
+}
+.upload-status-files-title-container {
+    display: table;
+    background-color: var(--light-charcaol);
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 75%;
+    height: 40px;
+    text-align: left;
+    vertical-align: middle;
+}
+.rotate_img {
+    transform: rotate(180deg);
+}
+.upload-status-files-title {
+    position: relative;
+    color: var(--light-smoke);
+    font-size: 13px;
+    display: table-cell;
+    vertical-align: middle;
+    left: 18px;
+}
+.upload-status-close-container {
+    position:absolute;
+    float: right;
+    right: 0;
+    height: 100%;
+    width: 50px;
+
+    background-color: var(--light-charcaol);
+
+    border-width: 0;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.file-uploads-list {
+    height: 140px;
+    overflow-y: auto;
+    display:list-item;
+    width: calc(100% - 60px);
+
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.file-uploads-list::-webkit-scrollbar {
+    display: none;
+}
+.file-name-upload {
+    position: relative;
+    color: var(--light-smoke);
+    font-size: 12px;
+    left: 10px;
+}
+.file-progress-upload {
+    text-align: right;
+    color: var(--light-smoke);
+    font-size: 10px;
+    width: 50%;
+    display: inline;
+}
+.upload-status-close-img {
+    width: 30px;
+    height: 30px;
+}
+.file-upload-status {
+    width: 90%;
+    height: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.file-icon-uploading {
+    width: 25px;
+    height: 25px;
+}
+.progress-bar {
+    top: 35px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: 
+      radial-gradient(closest-side, var(--charcoal) 85%, transparent 85% 100%),
+      conic-gradient(var(--gold) 0%, var(--charcoal-2) 0);    
+}
+
+/* FILE DROP ZONE */
+.drop-zone {
+    position: relative;
+    width: 85%;
+    top: 100px;
+    height: 130px;
+    padding: 25px;
+    text-align: center;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    cursor: pointer;
+    color: #cccccc;
+    border: 3px dashed var(--dark-smoke);
+    border-spacing: 50px;
+    border-radius: 10px;
+  }
+.upload-icon {
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+
+.drop-zone__prompt {
+    color: var(--smoke-2);
+    float: left;
+    width: 100%;
+}
+
+.drop-zone--over {
+  background-color: var(--light-charcaol);
+  border-style: solid;
+}
+
+.drop-zone__input {
+    display: none;
+  }
+  
+.drop-zone__thumb {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #cccccc;
+    background-size: cover;
+    position: relative;
+  }
+  
+.drop-zone__thumb::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px 0;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.75);
+    font-size: 14px;
+    text-align: center;
+  }
+  
+
+/* CONTENT */
+.content {
+    position: absolute;
+    width: calc(100% - 350px);
+    height: 100%;
+    float: right;
+    top: 0;
+    right: 0;
+}
+.folder_import {
+    width: 100%;
+    height: 100%;
+}
+
+/* LOGOUT */
+.seperator {
+    width: 85%;
+    color: var(--light-smoke);
+    margin-top: 120px;
+}
+.logout-btn {
+    width: 85%;
+    position: relative;
+    height: 50px;
+    background: none;
+    border: none;
+    bottom: 0;
+    top: 15px;
+    left: 55px;
+}
+.logout-img {
+    width: 25px;
+    height: 25px;
+}
+
+/* FILE PREVIEWING */
+.backdrop {
+    z-index: 9999;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.file-preview-modal {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    background-color: rgba(104, 104, 104, 0.5);
+    border-radius: 15px;
+    padding: 15px;
+    
+    backdrop-filter: blur(10px);
+}
+.file-preview-video {
+    position: absolute;
+    width: -webkit-fill-available;
+    height: auto;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 15px;
+}
+.file-preview-img {
+    position: absolute;
+    width: auto;
+    height: 90%;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 15px;
+}
+.file-preview-img-src {
+    height: inherit;
+    width: auto;
+}
+.file-preview-modal-top {
+    width: 100%;
+    height: 40px;
+    vertical-align: middle;
+}
+.file-button-options-2 {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    float: right;
+    right: 0;
+    transition: all 0.2s;
+    border-radius: 100%;
+}
+.file-button-options-2:hover {
+    cursor: pointer;
+    background-color: var(--light-charcoal-2);
+}
+.file-button-options-img-2 {
+    width: 25px;
+    height: 25px;
+}
+.file-preview-modal-name {
+    font-size: x-large;
+}
+
+/* CONTEXT MENU */
+.context-menu {
+    position: fixed;
+    visibility: hidden;
+    z-index: 99999999;
+    width: 200px;
+    height: min-content;
+    background-color: var(--dark-smoke);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+}
+.context-menu button {
+    width: 100%;
+    height: 26px;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 14px;
+    background-color: transparent;
+    border: none;
+    stroke: none;
+    font-weight: 100;
+}
+.context-menu button:hover {
+    background-color: var(--smoke-2);
+}
+
+/* ANIMATIONS */
+@keyframes placeHolderShimmer {
+    0% {
+      background-position: -800px 0
+    }
+    100% {
+      background-position: 800px 0
+    }
+}
+
+.animated-background {
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background-color: #f6f7f8;
+    background: linear-gradient(to right, #eeeeee 8%, #bbbbbb 18%, #eeeeee 33%);
+    background-size: 800px 104px;
+    position: relative;
+}
+
+/* SIZING */
+@media (max-width: 920px) {
+    .side-nav {
+        display: none;
+    }
+    .content {
+        width: calc(100% - 90px);
+    }
+    .side-nav-main-buttons {
+        top: 10px;
+    }
+    .side-nav-button {
+        display: block;
+    }
+    .side-nav-top {
+        height: 50px;
+    }
+    .logo {
+        width: 60px;
+    }
+    .nav-button {
+        height: 33px;
+    }
+    .nav-button-img {
+        width: 20px;
+    }
+    .nav-button-text {
+        font-size: 12px;
+    }
+    .cloud-info-text {
+        font-size: 10px;
+    }
+    .cloud-info-progress-bar {
+        height: 8px;
+    }
+    .cloud-info-table {
+        font-size: 9px;
+    }
+    .cloud-info-color-display {
+        width: 10px;
+        height: 10px;
+    }
+    .upload-status-container {
+        height: 110px;
+        top: 50px;
+    }
+    .upload-status-files-title-container {
+        height: 30px;
+    }
+    .file-icon-uploading {
+        width: 15px;
+        height: 15px;
+    }
+    .file-upload-status {
+        width: 90%;
+        height: 30px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .file-name-upload {
+        font-size: 10px;
+    }
+    .progress-bar {
+        width: 20px;
+        height: 20px;
+    }
+    .drop-zone {
+        height: 90px;
+        font-size: 15px;
+        top: 65px;
+    }
+    .upload-icon {
+        width: 25px;
+        height: 25px;
+    }
+    .logout-btn {
+        top: 5px;
+    }
+    .seperator {
+        margin-top: 90px;
+    }
+}

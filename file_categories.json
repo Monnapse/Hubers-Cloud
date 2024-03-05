@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Videos",
+        "extensions": ["mp4","mov","avi","webm","wmv","flv","avchd","mpeg"],
+        "img_name": "Image.png"
+    },
+    {
+        "name": "Images",
+        "extensions": ["png","jpg","jpeg","svg","raw","gif","webp","tiff","psd","bmp","heif","indd","jpeg2000","ai","eps","pdf"],
+        "img_name": "Image.png"
+    },
+    {
+        "name": "Documents",
+        "extensions": ["doc","docx","odt","pdf","xls","xlsx","ods","ppt","pptx","txt"],
+        "img_name": "Document.png"
+    }
+]

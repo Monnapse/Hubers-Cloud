@@ -1,0 +1,51 @@
+/* GRID */
+.drives-grid {
+    display: flex;
+    gap: 15px 15px;
+    grid-template-columns: auto auto auto auto;
+    overflow-y: auto;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    width: 100%;
+    padding: 20px;
+}
+
+/* DRIVE CARD */
+.drive-card {
+    width: 600px;
+    height: 320px;
+    background-color: var(--light-charcaol);
+    border-radius: 30px;
+    padding: 25px 90px;
+}
+.drive-card-title {
+    width: 100%;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--default-smoke);
+}
+.drive-card-port {
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--smoke-2);
+}
+.connect-drive {
+    width: 200px;
+    height: 200px;
+}
+.connect-drive-img {
+    width: 135px;
+    height: 135px;
+}
+.connect-drive-span {
+    position: relative;
+    width: 100%;
+    font-weight: 300;
+    color: var(--smoke-2);
+    top: 20px;
+    font-size: 17px;
+}
+.new-drive:hover {
+    cursor: pointer;
+}

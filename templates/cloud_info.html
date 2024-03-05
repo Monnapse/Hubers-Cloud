@@ -1,0 +1,28 @@
+<div class="cloud-info-container center-horizontally-relative">
+    <span class="cloud-info-text">{{drive["used"]}} Used of {{drive["size"]}}</span>
+    <div class="cloud-info-progress-bar">
+        {% for i in drive["categories"] %}
+            {% if not i["category"] == "Free Space" and i["percentage"] %}
+                {% if drive["categories"][0]["category"]=="Free Space" and i == drive["categories"][1] or i == drive["categories"][0] %}
+                    <div class="cloud-info-category-progress cloud-info-color-{{i['category']}}" style="z-index: {{i['z-index']}}; width: calc({{i['percentage']}}% + 8px);"></div>
+                {% else %}
+                    <div class="cloud-info-category-progress cloud-info-color-{{i['category']}}" style="z-index: {{i['z-index']}}; width: calc({{i['percentage']}}% + 8px); margin-left: -8px;"></div>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </div>
+    <table class="cloud-info-table">
+        {% for i in drive["categories"] %}
+            <tr>
+                <th><div class="cloud-info-color-{{i['category']}} cloud-info-color-display"></div></th>
+                <th class="cloud-info-category">{{ i["category"] }}</th>
+                {% if i["category"]=="Free Space" %}
+                    <th class="cloud-info-category-files">{{ i["files"] }}</th>
+                {% else %}
+                    <th class="cloud-info-category-files">{{ i["files"] }} Files</th>
+                {% endif %}
+                <th class="cloud-info-category-size">{{ i["size"] }}</th>
+            </tr>
+        {% endfor %}
+    </table>
+</div>

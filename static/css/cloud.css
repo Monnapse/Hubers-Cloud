@@ -1,0 +1,154 @@
+.file-grid {
+    display: flex;
+    gap: 15px 15px;
+    grid-template-columns: auto auto auto auto;
+    padding: 20px;
+    overflow-y: auto;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    width: 100%;
+}
+.file-button {
+    background-color: var(--light-charcoal-2);
+    border: none;
+    outline: none;
+
+    width: 173.33px;
+    height: 133.33px;
+    border-radius: 7px;
+
+    font-size: 10px;
+    align-items: center;
+
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.2s;
+
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+
+    opacity: 1;
+
+    -webkit-transition: opacity 2s ease-in;
+       -moz-transition: opacity 2s ease-in;
+        -ms-transition: opacity 2s ease-in;
+         -o-transition: opacity 2s ease-in;
+            transition: opacity 2s ease-in;
+
+    -webkit-transition: background-color .1s linear;
+       -moz-transition: background-color .1s linear;
+        -ms-transition: background-color .1s linear;
+         -o-transition: background-color .1s linear;
+            transition: background-color .1s linear;
+}
+.file-button-selected {
+    background-color: var(--dark-gold);
+}
+.load {
+    opacity: 1;
+}
+.file-button:hover {
+    background-color: var(--smoke-3); 
+}
+.file-button-selected:hover {
+    background-color: var(--dark-gold-2);
+}
+.file-button-img {
+    width: 160px;
+    height: calc(100% - 45px);
+    margin-top: 7px;
+    background-position: top;
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; 
+}
+.file-button-icon {
+    width: 70px;
+    height: 70px;
+    margin-top: 19px;
+}
+.file-button-bottom {
+    position: relative;
+    margin-top: auto;
+    width: 100%;
+    height: 35px;
+    bottom: 0;
+    padding: 10px;
+}
+.file-button-name {
+    float: left;
+    left: 0;
+    color: var(--light-smoke);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 80px;
+}
+.file-button-size {
+    right: 5px;
+    float: right;
+    color: var(--light-smoke);
+}
+.file-button-options {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    float: right;
+    right: 0;
+    transition: all 0.2s;
+    border-radius: 100%;
+}
+.file-button-options:hover {
+    cursor: pointer;
+    background-color: var(--light-charcoal-2);
+}
+.file-button-options-img {
+    width: 15px;
+    height: 15px;
+}
+
+.title:hover {
+    background-color: var(--dark-smoke);
+}
+
+/* SIZING */
+@media (max-width: 920px) {
+    .file-button {
+        width: 143.33px;
+        height: 123.33px;
+    }
+    .file-button-name {
+        width: 55px;
+    }
+    .file-button-img{
+        width: 130px;
+    }
+}
+@media (max-width: 570px) {
+    .file-button {
+        width: 103.33px;
+        height: 93.33px;
+    }
+    .file-button-name {
+        width: 30px;
+        font-size: 7px;
+    }
+    .file-button-size{
+        font-size: 7px;
+    }
+    .file-button-img{
+        width: 130px;
+        height: calc(100% - 25px);
+    }
+    .file-button-bottom{
+        height: 22px;
+    }
+    .file-button-icon{
+        width: 50px;
+        height: 50px;
+    }
+}

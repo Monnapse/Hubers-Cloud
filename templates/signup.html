@@ -1,0 +1,23 @@
+<script src="/static/js/signup.js"></script>
+<script src="/static/js/requests.js"></script>
+
+<div class="center">
+    <div class="main-container center">
+        <div class="logo text-center center-horizontally-relative">
+            <img src="static/images/Cloud.png" alt="a cosy cloud">
+            HUBER'S CLOUD
+        </div>
+        <div class="prompt-container center-horizontally-relative">
+            Scan or enter code <strong>{{ twofa_key }}</strong> on authenticator app, and then enter the code and a username.
+            <br>
+            <a href="signin">Sign in</a>
+        </div>
+        <form name="signup_form" id="signup_form" onsubmit="signupSubmit(document.signup_form.username,document.signup_form._2fa)" action="">
+            <input class="username text-box" name="username" type="text" placeholder="Username">
+            <input class="2fa text-box" name="_2fa" type="text" placeholder="2FA Code">
+            <input class="submit button" type="submit" value="Create Account">
+        </form>
+        <div id="response" class="response prompt-container center-horizontally-relative"></div>
+        <img class="center-horizontally-relative" src="{{ twofa_displayer }}{{ twofa_uri }}">
+    </div>
+</div>

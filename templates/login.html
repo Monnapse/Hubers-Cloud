@@ -1,0 +1,19 @@
+<script src="/static/js/login.js"></script>
+<script src="/static/js/requests.js"></script>
+
+<div class="center">
+    <div class="main-container center">
+        <div class="logo text-center center-horizontally-relative">
+            <img src="static/images/Cloud.png" alt="a cosy cloud">
+            HUBER'S CLOUD
+        </div>
+        <div class="prompt-container center-horizontally-relative">
+            Enter the master password to continue
+        </div>
+        <form name="login_form" id="login-form" onsubmit="loginSubmit(document.login_form.password)" action="">
+            <input class="password text-box" name="password" type="password" placeholder="Master Password">
+            <input class="submit button" type="submit" value="Login">
+        </form>
+        <div id="response" class="response prompt-container center-horizontally-relative"></div>
+    </div>
+</div>

@@ -1,0 +1,198 @@
+/* 
+    MADE BY MONNAPSE 
+*/
+
+
+
+/* ROOT */
+:root {
+    --gold: #DFB35D;
+    --gold2: #e5ae37;
+    --dark-gold: #4F3D22;
+    --dark-gold-2: #5d492a;
+
+    --dark-grey: #212121;
+    --dark-grey-2: #252525;
+
+    --default-smoke: #D6D6D6;
+    --light-smoke: #BEBEBE;
+    --dark-smoke: #4E4E4E;
+    --smoke: #4A4A4A;
+    --smoke-2: #7C7C7C;
+    --smoke-3: #525252;
+
+    --red: #C66262;
+    --red2: #E26C6C;
+
+    --green: #62C678;
+    --green2: #82C969;
+
+    --blue: #4ABFE3;
+    --navy-blue: #27467b;
+
+    --purple: #899EEB;
+
+    --charcoal: #232323;
+    --charcoal-2: #222222;
+    --light-charcaol: #333333;
+    --light-charcoal-2: #2D2D2D;
+}
+
+
+
+/* BASE HTML PROPERTIES */
+* {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
+body {
+    background-color: #212121;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+a {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+/* COLORS */
+.gold {
+    color: #DFB35D;
+    background-color: #DFB35D;
+}
+.dark-grey {
+    color: #212121;
+    background-color: #212121;
+}
+
+
+
+/* POSITIONING */
+.center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -moz-transform: translate(-50%, -50%); /* Firefox */
+    -ms-transform: translate(-50%, -50%);  /* IE 9 */
+    -webkit-transform: translate(-50%, -50%); /* Safari and Chrome*/
+    -o-transform: translate(-50%, -50%); /* Opera */
+    transform: translate(-50%, -50%);
+}
+.center-relative {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    -moz-transform: translate(-50%, -50%); /* Firefox */
+    -ms-transform: translate(-50%, -50%);  /* IE 9 */
+    -webkit-transform: translate(-50%, -50%); /* Safari and Chrome*/
+    -o-transform: translate(-50%, -50%); /* Opera */
+    transform: translate(-50%, -50%);
+}
+.center-vertically {
+    position: absolute;
+    top: 50%;
+    -moz-transform: translateY(-50%); /* Firefox */
+    -ms-transform: translateY(-50%);  /* IE 9 */
+    -webkit-transform: translateY(-50%); /* Safari and Chrome*/
+    -o-transform: translateY(-50%); /* Opera */
+    transform: translateY(-50%);
+}
+.center-vertically-relative {
+    position: relative;
+    top: 50%;
+    -moz-transform: translateY(-50%); /* Firefox */
+    -ms-transform: translateY(-50%);  /* IE 9 */
+    -webkit-transform: translateY(-50%); /* Safari and Chrome*/
+    -o-transform: translateY(-50%); /* Opera */
+    transform: translateY(-50%);
+}
+.center-horizontally {
+    position: absolute;
+    left: 50%;
+    -moz-transform: translateX(-50%); /* Firefox */
+    -ms-transform: translateX(-50%);  /* IE 9 */
+    -webkit-transform: translateX(-50%); /* Safari and Chrome*/
+    -o-transform: translateX(-50%); /* Opera */
+    transform: translateX(-50%);
+}
+.center-horizontally-relative {
+    position: relative;
+    left: 50%;
+    -moz-transform: translateX(-50%); /* Firefox */
+    -ms-transform: translateX(-50%);  /* IE 9 */
+    -webkit-transform: translateX(-50%); /* Safari and Chrome*/
+    -o-transform: translateX(-50%); /* Opera */
+    transform: translateX(-50%);
+}
+
+
+
+/* FORM */
+form * {
+    display: block;
+    width: 100%;
+    height: 50px;
+
+    border-radius: 15px;
+    border-color: var(--dark-smoke);
+    border-width: 1px;
+    border-style: solid;
+    margin-bottom: 10px;
+
+    outline: none;
+}
+
+form input[type=password], form input[type=text] {
+    background-color: var(--dark-grey-2);
+    padding-left: 15px;
+}
+
+form input[type=submit]  {
+    border-color: var(--smoke-2);
+    background-color: var(--smoke);
+    color: var(--light-smoke);
+}
+
+/* PAGE CONTENT */
+.directory {
+    position: relative;
+  
+    left: 10px;
+    top: 15px;
+    bottom: 10px;
+
+    align-items: center;
+    vertical-align: middle;
+}
+.title {
+    text-decoration: none;
+    color: var(--default-smoke);
+  
+    font-size: 25px;
+    font-weight: lighter;
+
+    border-radius: 100px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.page-title-spacing {
+    position: relative;
+    left: 10px;
+    top: 15px;
+    bottom: 10px;
+    align-items: center;
+    vertical-align: middle;
+}
+.arrow-img {
+    width: 13px;
+    height: 13px;
+    rotate: 180deg;
+}

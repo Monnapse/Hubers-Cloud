@@ -1,0 +1,145 @@
+<script src="/static/js/requests.js"></script>
+<script src="/static/js/upload/manager.js"></script>
+<script src="/static/js/upload/file.js"></script>
+<script src="/static/js/cloud_template.js"></script>
+<script src="/static/js/modal.js"></script>
+<script src="/static/js/driveInfoPanel.js"></script>
+
+<!--<script src="/static/js/upload/folder.js"></script>-->
+
+<div class="animated-background">
+  <div class="background-masker btn-divide-left"></div>
+</div>
+
+
+<div id="side-nav-button" class="side-nav-button">
+  <img class="side-nav-button-img center-relative" src="static/images/Menu.png">
+</div>
+
+<div id="side-nav" class="side-nav">
+  <div class="side-nav-top">
+    <img class="logo center-vertically-relative" src="static/images/Logo.png" alt="the cloud logo">
+    <div id="side-nav-button-inside" class="side-nav-button side-nav-button-inside">
+      <img class="side-nav-button-img-inside center" src="static/images/Menu.png">
+    </div>
+  </div>
+
+  <div class="side-nav-main-buttons">
+    <button id="Cloud" class="nav-button center-horizontally-relative" onclick="window.location.href='cloud';">
+      <img class="nav-button-img center-vertically" src="static/images/Window.png" alt="the cloud logo">
+      <span class="nav-button-text center-vertically">Cloud</span>
+    </button>
+    <button id="Drives" class="nav-button center-horizontally-relative" onclick="window.location.href='drives';">
+      <img class="nav-button-img center-vertically" src="static/images/Drive.png" alt="the cloud logo">
+      <span class="nav-button-text center-vertically">Drives</span>
+    </button>
+    <button id="Settings" class="nav-button center-horizontally-relative" onclick="window.location.href='settings';">
+      <img class="nav-button-img center-vertically" src="static/images/Cog.png" alt="the cloud logo">
+      <span class="nav-button-text center-vertically">Settings</span>
+    </button>
+    <script>
+      // Load the selected button for the page
+      if ("{{ page }}" == "Cloud") {
+        element = document.getElementById("Cloud");
+        element.classList.add("selected");
+      } else if ("{{ page }}" == "Drives") {
+        element = document.getElementById("Drives");
+        element.classList.add("selected");
+      } else if ("{{ page }}" == "Settings") {
+        element = document.getElementById("Settings");
+        element.classList.add("selected");
+      } 
+      //console.log("{{ page }}")
+    </script>
+  </div>
+
+  
+  <!--
+  <div class="drive-info-container">
+    <span class="drive-info-text">372.9 GB Used of 482.7 GB</span>
+    <div class="drive-info-progress-bar animated-background"></div>
+    <table class="drive-info-table">
+      <tr class=" animated-background">
+        <th>
+          <div class="drive-info-color-display cloud-info-color-Others animated-background"></div>
+        </th>
+        <th class="drive-info-category  animated-background"></th>
+        <th class="drive-info-category-files  animated-background"></th>
+        <th class="drive-info-category-size  animated-background"></th>
+      </tr>
+      <tr class=" animated-background">
+        <th>
+          <div class="drive-info-color-display cloud-info-color-Videos animated-background"></div>
+        </th>
+        <th class="drive-info-category"></th>
+        <th class="drive-info-category-files"></th>
+        <th class="drive-info-category-size"></th>
+      </tr>
+      <tr class=" animated-background">
+        <th>
+          <div class="drive-info-color-display cloud-info-color-Images animated-background"></div>
+        </th>
+        <th class="drive-info-category"></th>
+        <th class="drive-info-category-files"></th>
+        <th class="drive-info-category-size"></th>
+      </tr>
+      <tr class=" animated-background">
+        <th>
+          <div class="drive-info-color-display cloud-info-color-Documents"></div>
+        </th>
+        <th class="drive-info-category"></th>
+        <th class="drive-info-category-files"></th>
+        <th class="drive-info-category-size"></th>
+      </tr>
+      <tr class=" animated-background">
+        <th>
+          <div class="drive-info-color-display drive-info-categor-color-default animated-background"></div>
+        </th>
+        <th class="drive-info-category"></th>
+        <th class="drive-info-category-files"></th>
+        <th class="drive-info-category-size"></th>
+      </tr>
+    </table>
+  </div>
+  -->
+
+
+  <div id="upload-status-container" class="upload-status-container toggle-upload-container">
+    <div class="upload-status-files-title-container">
+      <span id="upload-status-files-title" class="upload-status-files-title">Upload files</span>
+    </div>
+    <button onclick="toggle_upload_container()" class="upload-status-close-container center-vertically">
+      <img id="files-close-img" class="upload-status-close-img rotate_img" src="static/images/Arrow.png">
+    </button>
+    <script>
+      function toggle_upload_container() {
+        var container = document.getElementById("upload-status-container");
+        var buttom = document.getElementById("files-close-img");
+        container.classList.toggle("toggle-upload-container");
+        buttom.classList.toggle("rotate_img");
+      }
+    </script>
+
+    <div id="file-uploads-list" class="file-uploads-list"></div>
+  </div>
+  
+  <div class="drop-zone center-horizontally-relative">
+    <img class="upload-icon" src="static/images/Upload.png" alt="Upload icon">
+    <span class="drop-zone__prompt">Upload Files</span>
+    
+    <input type="file" name="myFile" class="drop-zone__input" multiple>
+  </div>
+  <script src="/static/js/upload/main.js"></script>
+
+  <hr class="seperator center-horizontally-relative">
+  <a href="/logout" class="logout-btn">
+    <img class="logout-img" src="static/images/Logout.png">
+    <span class="logout-text">Logout</span>
+  </a>
+</div>
+
+{% if content %}
+  <div class="content" id="content">
+    {% include content %}
+  </div>
+{% endif %}

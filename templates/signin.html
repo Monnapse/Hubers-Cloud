@@ -1,0 +1,22 @@
+<script src="/static/js/signin.js"></script>
+<script src="/static/js/requests.js"></script>
+
+<div class="center">
+    <div class="main-container center">
+        <div class="logo text-center center-horizontally-relative">
+            <img src="static/images/Cloud.png" alt="a cosy cloud">
+            HUBER'S CLOUD
+        </div>
+        <div class="prompt-container center-horizontally-relative">
+            Enter your username and 2FA code
+            <br>
+            <a href="signup">Dont have an account?</a>
+        </div>
+        <form name="signin_form" id="signin_form" onsubmit="signinSubmit(document.signin_form.username,document.signin_form._2fa)" action="">
+            <input class="username text-box" name="username" type="text" placeholder="Username">
+            <input class="2fa text-box" name="_2fa" type="text" placeholder="2FA Code">
+            <input class="submit button" type="submit" value="Sign In">
+        </form>
+        <div id="response" class="response prompt-container center-horizontally-relative"></div>
+    </div>
+</div>
