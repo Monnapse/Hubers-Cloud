@@ -1,23 +1,9 @@
 [
     {
         "name": "Main",
-        "descriptive_name": "First Drive",
-        "path": "C:\\HubersCloud_1",
-        "drive": "C:",
-        "size": 1073741824 
-    },
-    {
-        "name": "Extra",
-        "descriptive_name": "Extra Drive",
-        "path": "C:\\HubersCloud_2",
-        "drive": "C:",
-        "size": 107374182400
-    },
-    {
-        "name": "Big",
-        "descriptive_name": "Big Drive",
-        "path": "H://HubersCloud_3",
-        "drive": "H:",
-        "size": -1
+        "descriptive_name": "Main Drive",
+        "path": "D:\\HUBERS_CLOUD_STORAGE_FOLDER",
+        "drive": "D:",
+        "size": -1 
     }
 ]
