@@ -76,8 +76,8 @@ function uploadFile(file) {
     var queryString = window.location.search;
     var urlParams = new URLSearchParams(queryString);
     var path = urlParams.get('path');
-    ajax.setRequestHeader("FilePath", path.toString())
-
+    if (path) {ajax.setRequestHeader("FilePath", path.toString());}
+    
     //console.log(formdata);
     ajax.send(formdata);
     // ajax.abort(); // ABORTS

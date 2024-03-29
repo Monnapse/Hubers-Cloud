@@ -17,15 +17,23 @@ def run(app: Flask):
     @app.flask.route("/upload", methods=['POST']) 
     def upload():
         headers = request.headers
-        if not headers.get("FilePath"):
-            return {
-                "response": "No path",
-                "status": 400
-            }, 400
-        
-        path = headers.get("FilePath").split("/",1)
-        file_path = path[1]
-        drive_name = path[0]
+        path = ""
+        if headers.get("FilePath"):
+            path = headers.get("FilePath").split("/",1)
+            file_path = path[1]
+            drive_name = path[0]
+
+            drive_info = drives.get_drive_info(drive_name)
+            if not drive_info:
+                return {
+                    "response": "Drive does not exist",
+                    "code": 400
+                }, 400
+
+            path = drive_info["path"]+"/"+file_path
+        else:
+            drive = drives.get_drive_with_space(size)
+            path = drive["path"]
 
         if 'file1' not in request.files: 
             return {
@@ -48,18 +56,8 @@ def run(app: Flask):
         #drive = drives.get_drive_with_space(size)
         #path = drive["path"]
         
-        drive_info = drives.get_drive_info(drive_name)
-
-        if not drive_info:
-            return {
-                "response": "Drive does not exist",
-                "code": 400
-            }, 400
-
-        real_path = drive_info["path"]+"/"+file_path
-
         file.stream.seek(0)
-        file.save(os.path.join(real_path, file.filename))
+        file.save(os.path.join(path, file.filename))
         #
         return {
                 "response": f"Successfully uploaded {file.filename}",
