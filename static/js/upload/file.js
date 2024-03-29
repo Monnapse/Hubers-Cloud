@@ -18,11 +18,12 @@ function uploadFile(file) {
     uploadingAmount+=1;
     var title = document.getElementById("upload-status-files-title");
     title.innerText = "Uploading " + uploadingAmount + " files";
-  
+
     console.log(console);
     var formdata = new FormData();
     formdata.append("file1", file);
     var ajax = new XMLHttpRequest();
+
     //ajax.upload.addEventListener("progress", progressHandler, false);
   
     /*
@@ -71,7 +72,12 @@ function uploadFile(file) {
     //ajax.addEventListener("error", errorHandler, false);
     //ajax.addEventListener("abort", abortHandler, false);
     ajax.open("POST", "upload"); // http://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP
-    //use file_upload_parser.php from above url
+
+    var queryString = window.location.search;
+    var urlParams = new URLSearchParams(queryString);
+    var path = urlParams.get('path');
+    ajax.setRequestHeader("FilePath", path.toString())
+
     //console.log(formdata);
     ajax.send(formdata);
     // ajax.abort(); // ABORTS

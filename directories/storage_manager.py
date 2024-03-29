@@ -16,12 +16,23 @@ import shutil
 def run(app: Flask):
     @app.flask.route("/upload", methods=['POST']) 
     def upload():
+        headers = request.headers
+        if not headers.get("FilePath"):
+            return {
+                "response": "No path",
+                "status": 400
+            }, 400
+        
+        path = headers.get("FilePath").split("/",1)
+        file_path = path[1]
+        drive_name = path[0]
+
         if 'file1' not in request.files: 
             return {
                 "response": "No file to upload",
                 "status": 400
             }, 400
-
+        
         file = request.files["file1"]
         print(file)
         
@@ -34,12 +45,21 @@ def run(app: Flask):
         size = len(file.read()) + 1024 # add some to reserve
         #print(file_size.bytes_to_size(size))
 
-        drive = drives.get_drive_with_space(size)
-        path = drive["path"]
-        print(path)
+        #drive = drives.get_drive_with_space(size)
+        #path = drive["path"]
         
-        file.save(os.path.join(path, file.filename))
-    
+        drive_info = drives.get_drive_info(drive_name)
+
+        if not drive_info:
+            return {
+                "response": "Drive does not exist",
+                "code": 400
+            }, 400
+
+        real_path = drive_info["path"]+"/"+file_path
+
+        file.stream.seek(0)
+        file.save(os.path.join(real_path, file.filename))
         #
         return {
                 "response": f"Successfully uploaded {file.filename}",
