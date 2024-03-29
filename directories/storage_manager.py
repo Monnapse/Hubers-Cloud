@@ -17,7 +17,7 @@ def run(app: Flask):
     @app.flask.route("/upload", methods=['POST']) 
     def upload():
         headers = request.headers
-        path = ""
+        path = None
         if headers.get("FilePath"):
             path = headers.get("FilePath").split("/",1)
             file_path = path[1]
@@ -31,9 +31,6 @@ def run(app: Flask):
                 }, 400
 
             path = drive_info["path"]+"/"+file_path
-        else:
-            drive = drives.get_drive_with_space(size)
-            path = drive["path"]
 
         if 'file1' not in request.files: 
             return {
@@ -56,6 +53,10 @@ def run(app: Flask):
         #drive = drives.get_drive_with_space(size)
         #path = drive["path"]
         
+        if path == None:
+            drive = drives.get_drive_with_space(size)
+            path = drive["path"]
+
         file.stream.seek(0)
         file.save(os.path.join(path, file.filename))
         #
