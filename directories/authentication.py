@@ -90,7 +90,7 @@ def run(app: Flask):
                     content = "signup.html",
                     twofa_key = key,
                     twofa_uri = uri,
-                    twofa_displayer = "https://chart.apis.google.com/chart?cht=qr&chs=177x177&chl="
+                    twofa_displayer = "https://quickchart.io/chart?cht=qr&chs=177x177&chl="
                 )
         
     @app.flask.route("/form_login", methods=['POST']) 
