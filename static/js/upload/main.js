@@ -25,17 +25,17 @@ document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
     });
   });
 
-  //dropZoneElement.addEventListener("drop", (e) => {
-  //  e.preventDefault();
-//
-  //  if (e.dataTransfer.files.length) {
-  //    console.log(e.target.files);
-  //    inputElement.files = e.dataTransfer.files;
-  //    upload(e.dataTransfer.files);
-  //  }
-//
-  //  dropZoneElement.classList.remove("drop-zone--over");
-  //});
+  dropZoneElement.addEventListener("drop", (e) => {
+    e.preventDefault();
+
+    if (e.dataTransfer.files.length) {
+      console.log(e.target.files);
+      inputElement.files = e.dataTransfer.files;
+      upload(e.dataTransfer.files);
+    }
+
+    dropZoneElement.classList.remove("drop-zone--over");
+  });
   
 
   dropZoneElement.addEventListener("drop", function(event) {
