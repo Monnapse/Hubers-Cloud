@@ -418,6 +418,28 @@
 }
 
 /* SIZING */
+@media (max-height: 950px) {
+    .upload-status-container {
+        height: 110px;
+        top: 50px;
+    }
+    .drop-zone {
+        height: 50px;
+        font-size: 15px;
+        top: 65px;
+        padding: 0;
+    }
+    .upload-icon {
+        width: 25px;
+        height: 25px;
+    }
+    .seperator {
+        margin-top: 80px;
+    }
+    .logout-btn {
+        top: 0;
+    }
+}
 @media (max-width: 920px) {
     .side-nav {
         display: none;

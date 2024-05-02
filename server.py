@@ -24,4 +24,4 @@ if __name__ == '__main__':
     # Now make the web directories
     # and run the flask app
     web_controller.run_directories()
-    app.run(debug=True, port="2401", host="0.0.0.0")
+    app.run(debug=True, port="2400", host="0.0.0.0")
