@@ -12,10 +12,31 @@ import os
 import psutil
 import pathlib
 import json
+#from heic2png import HEIC2PNG
+from PIL import Image
+from pillow_heif import register_heif_opener
+from io import BytesIO
  
+register_heif_opener()
+
 compiled_file_info = []
 file_extensions = None
 drives = None
+
+def convert_to_bytes(file_path: str, encoder: str="raw"):
+    #heic_img = HEIC2PNG(file_path, quality=80)
+    #heic_img.image.
+    #return heic_img.image.tobytes(encoder)
+    with Image.open(file_path) as img:
+        # Convert the HEIC image to JPEG
+        img_jpeg = BytesIO()
+        img.convert('RGB').save(img_jpeg, 'JPEG')
+        img_jpeg.seek(0)
+
+        return img_jpeg
+
+    #im = Image.open(file_path)  # do whatever need with a Pillow image
+    #return im.tobytes(encoder)
 
 def get_files_from_json():
     global file_extensions

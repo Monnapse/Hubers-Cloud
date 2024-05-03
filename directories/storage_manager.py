@@ -11,7 +11,9 @@ from flask import Flask, render_template, request, session, redirect, send_file
 from flask_session import Session
 import lib.storage_managment as sm
 from lib.storage_managment import drives, file_size
+from lib.storage import get_extension, convert_to_bytes
 import shutil
+from io import BytesIO
 
 def run(app: Flask):
     @app.flask.route("/upload", methods=['POST']) 
@@ -166,7 +168,17 @@ def run(app: Flask):
             }, 400
 
         real_path = drive_info["path"]+"/"+file_path
-        return send_file(real_path)
+        """ TEMPORARY FIX!!! MUST FIX"""
+        ext = get_extension(real_path).lower()
+        if ext == "heic":
+            return send_file(
+                convert_to_bytes(real_path), 
+                mimetype="images/jpeg",
+            )
+        #print(get_extension(real_path))
+        else:
+            return send_file(real_path)
+        
     
     #previewfile
     @app.flask.route("/drives/previewfile") 
@@ -187,9 +199,17 @@ def run(app: Flask):
                 "response": "Drive does not exist",
                 "code": 400
             }, 400
+        #print(get_extension(real_path))
         category = drives.get_category(drives.get_extension(file_path))
         real_path = drive_info["path"]+"/"+file_path
         if category == "Images":
+            """ TEMPORARY FIX!!! MUST FIX"""
+            ext = get_extension(real_path).lower()
+            if ext == "heic":
+                return send_file(
+                    convert_to_bytes(real_path), 
+                    mimetype="images/jpeg"
+                )
             return send_file(real_path)
         elif category == "Videos":
             bytesIo = sm.get_video_first_frame(real_path)

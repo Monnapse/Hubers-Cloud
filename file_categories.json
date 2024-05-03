@@ -6,7 +6,7 @@
     },
     {
         "name": "Images",
-        "extensions": ["png","jpg","jpeg","svg","raw","gif","webp","tiff","psd","bmp","heif","indd","jpeg2000","ai","eps","pdf"],
+        "extensions": ["png","jpg","jpeg","svg","raw","gif","webp","tiff","psd","bmp","heif","indd","jpeg2000","ai","eps","pdf","heic"],
         "img_name": "Image.png"
     },
     {
